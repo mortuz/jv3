@@ -169,7 +169,8 @@ $('.responsive').on('click', function (e) {
               strings: [
                 $(this).data("text1"),
                 $(this).data("text2"),
-                $(this).data("text3")
+                $(this).data("text3"),
+                $(this).data("text4")
               ],
               loop: $(this).data("loop")
                 ? $(this).data("loop")
@@ -195,33 +196,137 @@ $('.responsive').on('click', function (e) {
     var owlcar = $('.owl-carousel');
     if (owlcar.length) {
         owlcar.each(function () {
-            var $owl = $(this);
-            var itemsData = $owl.data('items');
-            var autoPlayData = $owl.data('autoplay');
-            var paginationData = $owl.data('pagination');
-            var navigationData = $owl.data('navigation');
-            var stopOnHoverData = $owl.data('stop-on-hover');
-            var itemsDesktopData = $owl.data('items-desktop');
-            var itemsDesktopSmallData = $owl.data('items-desktop-small');
-            var itemsTabletData = $owl.data('items-tablet');
-            var itemsTabletSmallData = $owl.data('items-tablet-small');
-            $owl.owlCarousel({
-                items: itemsData
-                , pagination: paginationData
-                , navigation: navigationData
-                , autoPlay: autoPlayData
-                , stopOnHover: stopOnHoverData
-                , navigationText: ["<", ">"]
-                , itemsCustom: [
-                    [0, 1]
-                    , [500, itemsTabletSmallData]
-                    , [710, itemsTabletData]
-                    , [992, itemsDesktopSmallData]
-                    , [1199, itemsDesktopData]
-                ]
-            , });
+            // var $owl = $(this);
+            // var itemsData = $owl.data('items');
+            // var autoPlayData = $owl.data('autoplay');
+            // var paginationData = $owl.data('pagination');
+            // var navigationData = $owl.data('navigation');
+            // var stopOnHoverData = $owl.data('stop-on-hover');
+            // var itemsDesktopData = $owl.data('items-desktop');
+            // var itemsDesktopSmallData = $owl.data('items-desktop-small');
+            // var itemsTabletData = $owl.data('items-tablet');
+            // var itemsTabletSmallData = $owl.data('items-tablet-small');
+            // $owl.owlCarousel({
+            //     items: itemsData
+            //     , pagination: paginationData
+            //     , navigation: navigationData
+            //     , autoPlay: autoPlayData
+            //     , stopOnHover: stopOnHoverData
+            //     , navigationText: ["<", ">"]
+            //     , itemsCustom: [
+            //         [0, 1]
+            //         , [500, itemsTabletSmallData]
+            //         , [710, itemsTabletData]
+            //         , [992, itemsDesktopSmallData]
+            //         , [1199, itemsDesktopData]
+            //     ]
+            // , });
         });
     }
+
+    $(".js-partners").owlCarousel({
+      autoplay: true,
+      loop: true,
+      dots: true,
+      // nav: true,
+      margin: 10,
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 2
+        },
+        320: {
+          items: 2
+        },
+        480: {
+          items: 2
+        },
+        552: {
+          items: 4
+        },
+        768: {
+          items: 5,
+          margin: 20
+        },
+        1000: {
+          items: 6,
+          margin: 20
+        }
+      }
+    });
+
+    var contCar = $(".js-contact").owlCarousel({
+        items: 1,
+        loop: false,
+        dots: true
+        // responsiveClass: true,
+        // responsive: {
+        //     0: {
+        //         items: 1
+        //     },
+        //     320: {
+        //         items: 1
+        //     },
+        //     480: {
+        //         items: 1
+        //     },
+        //     552: {
+        //         items: 1
+        //     },
+        //     768: {
+        //         items: 1,
+        //     },
+        //     1000: {
+        //         items: 1,
+        //     }
+        // }
+    });
+
+    function slideTo(index) {
+        // contCar.trigger("to.owl.carousel", [index]);
+        $(".js-contact").trigger("next.owl.carousel");
+        console.log(contCar)
+    }
+
+    $(".js-advertiser").on('click', function(e) {
+        slideTo(2);
+        e.preventDefault();
+    });
+    $(".js-publisher").on("click", function(e) {
+      e.preventDefault();
+      slideTo(1);
+    });
+
+    $(".js-brands").owlCarousel({
+      autoplay: true,
+      loop: true,
+      dots: true,
+      // nav: true,
+      margin: 10,
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 2
+        },
+        320: {
+          items: 2
+        },
+        480: {
+          items: 2
+        },
+        552: {
+          items: 4
+        },
+        768: {
+          items: 5,
+          margin: 20
+        },
+        1000: {
+          items: 6,
+          margin: 20
+        }
+      }
+    });
     
     
 }); // document ready end 
