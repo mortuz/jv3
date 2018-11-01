@@ -18,7 +18,8 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/animate.css" />
-    <link rel="stylesheet" href="css/owl.carousel.css" />
+    <link rel="stylesheet" href="libs/OwlCarousel2-2.3.4/dist/assets/owl.carousel.css" />
+    <!-- <link rel="stylesheet" href="css/owl.theme.default.min.css" /> -->
     <link rel="stylesheet" href="css/magnific-popup.css" />
 
     <!-- Google Web fonts -->
@@ -336,7 +337,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="owl-carousel js-contact">
+                    <div class="owl-carousel owl-theme js-contact-carousel">
 
                         <div class="slide" id="information" data-anchor="information">
                             <!-- Begin of slide section wrapper -->
@@ -408,6 +409,9 @@
                         <div class="slide" id="advertiser" data-anchor="advertiser">
                             <!-- Begin of slide section wrapper -->
                             <div class="section-wrapper">
+                                <div class="section-title text-center">
+                                    <h5 class="title-bg">Contact</h5>
+                                </div>
                                 <div class="row justify-content-between">
                                     <div class="col-12 col-md-6 center-vh">
                                         <!-- content -->
@@ -423,10 +427,10 @@
                         
                                             <!-- Action button -->
                                             <div class="btns-action">
-                                                <a class="btn btn-outline-white btn-round" href="#contact/information">
+                                                <a class="btn btn-outline-white btn-round js-info" href="">
                                                     <span class="txt">Information</span>
                                                 </a>
-                                                <a class="btn btn-outline-white btn-round" href="#contact/publisher">
+                                                <a class="btn btn-outline-white btn-round js-publisher" href="">
                                                     <span class="txt">I'm a publisher</span>
                                                 </a>
                                             </div>
@@ -440,10 +444,10 @@
                                             <div class="">
                                                 <div class="form-container form-container-card">
                                                     <!-- Message form container -->
-                                                    <form class="send_message_form message form" method="post" action="ajax/contact.php" id="message_form">
+                                                    <form class="send_message_form message form" method="post" novalidate="novalidate" action="ajax/contact.php" id="message_form">
                                                         <div class="form-group name">
                                                             <label for="mes-name">Name :</label>
-                                                            <input id="mes-name" name="name" type="text" placeholder="" class="form-control-line form-success-clean"
+                                                            <input id="mes-name" name="name" type="text" placeholder="" class="form-control-line form-control form-success-clean"
                                                                 required>
                                                         </div>
                         
@@ -451,7 +455,7 @@
                         
                                                         <div class="form-group email">
                                                             <label for="mes-email">Email :</label>
-                                                            <input id="mes-email" type="email" placeholder="" name="email" class="form-control-line form-success-clean"
+                                                            <input id="mes-email" type="email" placeholder="" name="email" class="form-control-line form-control form-success-clean"
                                                                 required>
                                                         </div>
                                                         <div class="form-group no-border">
@@ -467,7 +471,7 @@
                                                         </div>
                         
                                                         <div class="btns">
-                                                            <button id="submit-message" class="btn btn-normal btn-white btn-round btn-full email_b"
+                                                            <button id="submit-message" class="btn btn-normal btn-block btn-white btn-round btn-full email_b"
                                                                 name="submit_message">
                                                                 <span class="txt">Send</span>
                                                                 <span class="arrow-icon"></span>
@@ -487,6 +491,9 @@
                         <div class="slide" id="publisher" data-anchor="publisher">
                             <!-- Begin of slide section wrapper -->
                             <div class="section-wrapper">
+                                <div class="section-title text-center">
+                                    <h5 class="title-bg">Contact</h5>
+                                </div>
                                 <div class="row justify-content-between">
                                     <div class="col-12 col-md-6 center-vh">
                                         <!-- content -->
@@ -502,10 +509,10 @@
                         
                                             <!-- Action button -->
                                             <div class="btns-action">
-                                                <a class="btn btn-outline-white btn-round" href="#contact/information">
+                                                <a class="btn btn-outline-white btn-round js-info" href="">
                                                     <span class="txt">Information</span>
                                                 </a>
-                                                <a class="btn btn-outline-white btn-round" href="#contact/advertiser">
+                                                <a class="btn btn-outline-white btn-round js-advertiser" href="">
                                                     <span class="txt">I'm an advertiser</span>
                                                 </a>
                                             </div>
@@ -519,10 +526,10 @@
                                             <div class="">
                                                 <div class="form-container form-container-card">
                                                     <!-- Message form container -->
-                                                    <form class="send_message_form message form" method="post" action="" id="message_form">
+                                                    <form class="send_message_form message form" method="post" novalidate="novalidate" action="" id="message_form">
                                                         <div class="form-group name">
                                                             <label for="mes-name">Name :</label>
-                                                            <input id="mes-name" name="name" type="text" placeholder="" class="form-control-line form-success-clean"
+                                                            <input id="mes-name" name="name" type="text" placeholder="" class="form-control form-control-line form-success-clean"
                                                                 required>
                                                         </div>
                         
@@ -530,12 +537,12 @@
                         
                                                         <div class="form-group email">
                                                             <label for="mes-email">Email :</label>
-                                                            <input id="mes-email" type="email" placeholder="" name="email" class="form-control-line form-success-clean"
+                                                            <input id="mes-email" type="email" placeholder="" name="email" class="form-control form-control-line form-success-clean"
                                                                 required>
                                                         </div>
                                                         <div class="form-group no-border">
                                                             <label for="mes-text">Message</label>
-                                                            <textarea id="mes-text" placeholder="..." name="message" class="form-control form-control-outline thick form-success-clean"
+                                                            <textarea id="mes-text" placeholder="..." rows="4" name="message" class="form-control form-control-outline thick form-success-clean"
                                                                 required></textarea>
                         
                                                             <div>
@@ -546,7 +553,7 @@
                                                         </div>
                         
                                                         <div class="btns">
-                                                            <button id="submit-message" class="btn btn-normal btn-white btn-round btn-full email_b"
+                                                            <button id="submit-message" class="btn btn-block btn-normal btn-white btn-round btn-full email_b"
                                                                 name="submit_message">
                                                                 <span class="txt">Send</span>
                                                                 <span class="arrow-icon"></span>
@@ -589,14 +596,14 @@
     <script src="js/wow.min.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
     <script src="js/typed.js"></script>
+    <script src="js/jquery.validator.js"></script>
+    <script src="js/form_script.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
+    <script src="libs/OwlCarousel2-2.3.4/dist/owl.carousel.js"></script>
+    <script src="js/owl.carousel.js"></script>
     <script src="js/main.js"></script>
 
     <script>
-        // new fullpage('#conact-section', {
-        //         anchors: ['firstPage', 'secondPage', 'thirdPage']
-        // });
     </script>
 
 </body>
