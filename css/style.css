@@ -1424,3 +1424,17 @@ label {
     border: 1px solid transparent;
     background-color: #f8204b;
 }
+.hover-effect {
+  overflow: hidden;
+}
+.overlay{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: -100%;
+    color: #FFF;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 10;
+}
