@@ -356,6 +356,24 @@ $('.responsive').on('click', function (e) {
         }
       }
     });
+
+    $(".js-team-carousel").owlCarousel({
+      autoplay: true,
+      loop: false,
+      margin: 20,
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 2
+        },
+        1000: {
+          items: 3
+        }
+      }
+    });
     
     
 }); // document ready end 

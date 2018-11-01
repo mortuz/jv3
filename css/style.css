@@ -20,7 +20,9 @@
 
 
 /*------------------------ 1 Body and Core Css ------------------------*/
-
+:root {
+  --primary-color: #ff6b00;
+}
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -1437,4 +1439,94 @@ label {
     color: #FFF;
     background-color: rgba(0,0,0,0.8);
     z-index: 10;
+}
+
+.people {
+    /* border: 1px solid rgba(0,0,0, 0.1); */
+    /* box-shadow: var(--box-shadow); */
+    overflow: hidden;
+}
+.people-content {
+    position: relative;
+    background-color: #fff;
+    /* overflow: hidden; */
+}
+.people:hover img {
+    opacity: 0;
+}
+.people:hover .people-img {
+    height: auto;
+}
+.people:hover .people-content {
+    height: auto;
+}
+.people-img {
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    height: 200px;
+}
+.people-img:before {
+    content: '';
+    width: 200%;
+    height: 30%;
+    background: #fff;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    transform: rotate(-10deg);
+    transition: all 0s;
+    left: -1%;
+}
+.people-content {
+    padding: 10px;
+    text-align: center;
+    height: 130px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.h3{
+    font-size: 35px;
+    font-weight: bold;
+}
+.people-content h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.people-content .info, 
+.people-content .description {
+    width: calc(100% - 20px);
+}
+
+.people-content .info {
+    position: absolute;
+    opacity: 1;
+    background-color: #fff;
+    transform: translateY(0px);
+}
+.people-content .description {
+    opacity: 0;
+    background-color: #fff;
+    transform: translateY(100px);
+    transition: all 0.3s ease;
+}
+.people:hover .people-content .info {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.3s ease;
+}
+.people:hover .people-content .description {
+    opacity: 1;
+    transform: translateY(0px);
+}
+.people-content .designation {
+    font-size: 14px;
+    color: var(--primary-color);
+}
+
+.text-mail{
+    color: var(--primary-color);
 }
