@@ -789,6 +789,26 @@ input:-webkit-autofill {
   cursor: pointer;
 }
 
+.product_filter {
+  /* text-align: center; */
+  padding-top: 15px;
+}
+
+.product_filter ul {
+  margin: auto;
+  display: inline-block;
+}
+
+.product_filter ul li {
+  font-size: 14px;
+  color: #777777;
+  font-family: "Poppins", sans-serif;
+  float: left;
+  margin-right: 15px;
+  list-style: none;
+  cursor: pointer;
+}
+
 .single_item {
   margin-bottom: 30px;
 }
