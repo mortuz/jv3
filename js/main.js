@@ -382,8 +382,28 @@ $('.responsive').on('click', function (e) {
 
 /* Contact Form JS*/
 (function($){
-   'use strict'; 
+   'use strict';
    
+    $('.md-trigger').on('click', function (e) {
+        e.preventDefault();
+        var sel = $(this).attr('data-file');
+
+        $.ajax({
+            url: '../data/'+ sel +'.html',
+            success: function(data) {
+                $(".md-content-inner").html(data);
+                $(".md-modal").addClass("md-show");
+            },
+            error: function(err) {
+                console.log('Err:', err);
+            }
+        })
+    });
+
+    $('.md-close').on('click', function () {
+        $('.md-modal').removeClass('md-show');
+    });
+
    $(".contact-form").on('submit', function(e){
         e.preventDefault();
         
@@ -451,7 +471,9 @@ $('.responsive').on('click', function (e) {
             i++;
         })
     }
-    overlayWidth();
+    setTimeout(function(){
+        overlayWidth();
+    }, 200)
     $(window).on('resize', overlayWidth);
 
     //Detect Closest Edge
