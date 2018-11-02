@@ -430,14 +430,29 @@ $('.responsive').on('click', function (e) {
         {
             $("#con_submit, .sitebtn").val('Failed!');
         }
-   });
-   $(".requie").keyup(function() {
+    });
+    $(".requie").keyup(function() {
         $(this).removeClass('reqError');
     });
-
-
+    
+    
     // hover effect
-    $('.hover-effect').append('<div class="overlay"></div>');
+    var overlayColors = ['red', 'purple', 'blue'];
+    $('.hover-effect').append('<div class="overlay mx-auto"></div>');
+    
+    function overlayWidth() {
+        // console.log($(".hover-effect"));
+        var i = 0;
+        $('.hover-effect').each(function () {
+            // console.log($(this))
+            var width = $(this).find('img').width();
+            var height = $(this).find('img').height();
+            $(this).find('.overlay').addClass(overlayColors[i % 3]).width(width).height(height);
+            i++;
+        })
+    }
+    overlayWidth();
+    $(window).on('resize', overlayWidth);
 
     //Detect Closest Edge
     function closestEdge(x, y, w, h) {
@@ -468,7 +483,7 @@ $('.responsive').on('click', function (e) {
     }
 
 
-    var boxes = document.querySelectorAll(".hover-effect");
+    var boxes = document.querySelectorAll(".hover-effect1");
 
     for (var i = 0; i < boxes.length; i++) {
 
