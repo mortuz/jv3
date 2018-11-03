@@ -1939,3 +1939,6 @@ section.work-cards article a:hover .symbol svg{
 	transform: scale(1);
 	opacity: 1;
 }
+.grey-img {
+  filter: grayscale(0.8)
+}
