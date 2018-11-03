@@ -30,7 +30,9 @@ body {
 html {
   height: 100%;
 }
-
+video {
+  max-width: 100%;
+}
 nav {
   position: fixed;
   background: #fff;
