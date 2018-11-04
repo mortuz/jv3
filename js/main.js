@@ -586,4 +586,13 @@ $(document).ready(function() {
       }
     };
   }
+
+  $("#upload-resume").on("click", function(){
+    $("#resume").click();
+    var btn = $('.filename');
+    $('#resume').on('change', function(e) {
+      btn.text(e.target.files[0].name);
+    })
+    return false;
+  });
 })(jQuery);
