@@ -1869,23 +1869,42 @@ section.work-cards article a:hover .symbol svg{
   padding: 5px 10px;
 } */
 .md-close {
-  margin-top: 40px;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  transform: scale(0.8)
+}
+.md-close:hover {
+  transform: rotate(90deg) scale(0.8)
 }
 .md-modal {
-  margin: auto;
-	position: fixed;
-	top: 100px;
-	left: 0;
-  right: 0;
-	width: 50%;
-	max-width: 630px;
-	min-width: 320px;
-	height: auto;
-	z-index: 2000;
-	visibility: hidden;
-	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
-	backface-visibility: hidden;
+    margin: auto;
+    position: fixed;
+    top: 5%;
+    left: 0;
+    right: 0;
+    width: 90%;
+    /* max-width: 800px; */
+    min-width: 320px;
+    height: auto;
+    z-index: 2000;
+    visibility: hidden;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 2rem 1.5rem;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    height: 90%;
+    overflow-y: auto;
+}
+
+.md-content {
+  overflow-y: auto;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 .md-show {
@@ -1901,7 +1920,7 @@ section.work-cards article a:hover .symbol svg{
 	left: 0;
 	z-index: 1000;
 	opacity: 0;
-	background: rgba(#ffffff, 0.8);
+	background: rgba(#000000, 0.8);
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
@@ -1924,7 +1943,7 @@ section.work-cards article a:hover .symbol svg{
 }
 
 .md-show.md-effect-12 ~ .md-overlay {
-	background-color: #ffffff;
+	background-color: rgba(0, 0, 0, 0.66);
 } 
 
 .md-effect-12 .md-content h3,
@@ -1941,4 +1960,29 @@ section.work-cards article a:hover .symbol svg{
 }
 .grey-img {
   filter: grayscale(0.8)
+}
+
+
+
+.img-title {
+    color: #fff;
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    z-index: 200;
+    /* text-align: center; */
+    transition: all 0.3s  ease-in-out;
+}
+.img-title h2 {
+  font-size: 24px;
+}
+.img-title p {
+  font-size: 14px;
+  color: #f7f7f7;
+}
+.hover-effect:hover .img-title {
+  color: #000;
+}
+.hover-effect:hover .img-title p {
+  color: #414141;
 }

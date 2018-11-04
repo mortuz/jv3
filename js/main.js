@@ -404,7 +404,7 @@ $(document).ready(function() {
     });
   });
 
-  $(".md-close").on("click", function() {
+  $(".md-close, .md-overlay").on("click", function() {
     $(".md-modal").removeClass("md-show");
   });
 
