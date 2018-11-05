@@ -479,7 +479,7 @@ $(document).ready(function() {
   }
   setTimeout(function() {
     overlayWidth();
-  }, 200);
+  }, 500);
   $(window).on("resize", overlayWidth);
 
   //Detect Closest Edge
@@ -564,7 +564,7 @@ $(document).ready(function() {
       var overlay = this.childNodes[3];
       var image = this.childNodes[1];
 
-      console.log(edge);
+      // console.log(edge)i;
 
       switch (edge) {
         case "left":

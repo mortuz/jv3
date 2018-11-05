@@ -1970,7 +1970,7 @@ section.work-cards article a:hover .symbol svg{
     bottom: 20px;
     left: 50px;
     z-index: 200;
-    /* text-align: center; */
+    width: calc(100% - 100px );
     transition: all 0.3s  ease-in-out;
 }
 .img-title h2 {
