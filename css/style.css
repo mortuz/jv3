@@ -1893,7 +1893,7 @@ section.work-cards article a:hover .symbol svg{
     visibility: hidden;
     background-color: #fff;
     border-radius: 5px;
-    padding: 2rem 1.5rem;
+    padding: 2rem 3rem;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     backface-visibility: hidden;
