@@ -1760,6 +1760,7 @@ section.work-cards article .content .image img {
     top: 70%;
     width: auto;
     z-index: 1;
+    max-width: none;
 }
 section.work-cards article .content .image:after {
     -ms-transform: scale(2);

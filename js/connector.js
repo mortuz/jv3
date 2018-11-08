@@ -19,7 +19,7 @@
         var image = article._embedded["wp:featuredmedia"][0].source_url;
 
         html += `
-        <a href="#" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 blog-content wow fadeInUp" data-wow-delay="0.4s">
+        <a href="single-blog.html?id=${article.id}" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 blog-content wow fadeInUp" data-wow-delay="0.4s">
             <div class="blog-image">
                 <div class="hover-effect">
 

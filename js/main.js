@@ -13,13 +13,15 @@ $(window).load(function() {
   if (sendMessageForm.attr("action") && sendMessageForm.attr("action") != "") {
     messageServerUrl = sendMessageForm.attr("action");
   }
-
-  sendEmailForm.initForm({
-    serverUrl: newsletterServerUrl
-  });
-  sendMessageForm.initForm({
-    serverUrl: messageServerUrl
-  });
+if(sendEmailForm.length) {
+  sendEmailForm.initForm({ serverUrl: newsletterServerUrl });
+}
+  if(sendMessageForm.length) {
+    sendMessageForm.initForm({
+      serverUrl: messageServerUrl
+    });
+  }
+  
 
   // LIGHTBOX VIDEO
   $(".popup-youtube, .popup-vimeo, .popup-gmaps").magnificPopup({
@@ -256,69 +258,73 @@ $(document).ready(function() {
     });
   }
 
-  $(".js-partners").owlCarousel({
-    autoplay: true,
-    loop: true,
-    dots: false,
-    nav: false,
-    margin: 10,
-    responsiveClass: true,
-    responsive: {
-      0: {
-        items: 2
-      },
-      320: {
-        items: 2
-      },
-      480: {
-        items: 2
-      },
-      552: {
-        items: 4
-      },
-      768: {
-        items: 5,
-        margin: 20
-      },
-      1000: {
-        items: 6,
-        margin: 20
+  if ($(".js-partners").length) {
+    $(".js-partners").owlCarousel({
+      autoplay: true,
+      loop: true,
+      dots: false,
+      nav: false,
+      margin: 10,
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 2
+        },
+        320: {
+          items: 2
+        },
+        480: {
+          items: 2
+        },
+        552: {
+          items: 4
+        },
+        768: {
+          items: 5,
+          margin: 20
+        },
+        1000: {
+          items: 6,
+          margin: 20
+        }
       }
-    }
-  });
+    });
+  }
+  
 
   var conCar = $(".js-contact-carousel");
-  // conCar.on("initialize.owl.carousel", function (e) {
-  //     console.log('hello')
-  // });
-  conCar.owlCarousel({
-    items: 1,
-    autoplay: false,
-    loop: true,
-    nav: false,
-    dots: true
-    //   responsiveClass: true,
-    //   responsive: {
-    //     0: {
-    //       items: 1,
-    //     },
-    //     320: {
-    //       items: 1
-    //     },
-    //     480: {
-    //       items: 1
-    //     },
-    //     552: {
-    //       items: 1
-    //     },
-    //     768: {
-    //       items: 1
-    //     },
-    //     1000: {
-    //       items: 1
-    //     }
-    //   },
-  });
+
+  if(conCar.length) {
+    conCar.owlCarousel({
+      items: 1,
+      autoplay: false,
+      loop: true,
+      nav: false,
+      dots: true
+      //   responsiveClass: true,
+      //   responsive: {
+      //     0: {
+      //       items: 1,
+      //     },
+      //     320: {
+      //       items: 1
+      //     },
+      //     480: {
+      //       items: 1
+      //     },
+      //     552: {
+      //       items: 1
+      //     },
+      //     768: {
+      //       items: 1
+      //     },
+      //     1000: {
+      //       items: 1
+      //     }
+      //   },
+    });
+  }
+  
 
   $(".js-advertiser").on("click", function(e) {
     conCar.trigger("to.owl.carousel", [1, 500, true]);
@@ -334,54 +340,57 @@ $(document).ready(function() {
     e.preventDefault();
   });
 
-  $(".js-brands").owlCarousel({
-    autoplay: true,
-    loop: true,
-    dots: true,
-    //   nav: true,
-    //   margin: 10,
-    responsiveClass: true,
-    responsive: {
-      0: {
-        items: 2
-      },
-      320: {
-        items: 2
-      },
-      480: {
-        items: 2
-      },
-      552: {
-        items: 4
-      },
-      768: {
-        items: 5,
-        margin: 20
-      },
-      1000: {
-        items: 6,
-        margin: 20
+  if($('.js-brands').length) {
+    $(".js-brands").owlCarousel({
+      autoplay: true,
+      loop: true,
+      dots: true,
+      //   nav: true,
+      //   margin: 10,
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 2
+        },
+        320: {
+          items: 2
+        },
+        480: {
+          items: 2
+        },
+        552: {
+          items: 4
+        },
+        768: {
+          items: 5,
+          margin: 20
+        },
+        1000: {
+          items: 6,
+          margin: 20
+        }
       }
-    }
-  });
+    });
+  }
+  
 
-  $(".js-team-carousel").owlCarousel({
-    autoplay: true,
-    loop: false,
-    margin: 20,
-    responsiveClass: true,
-    responsive: {
-      0: {
-        items: 1
-      },
-      768: {
-        items: 2
-      },
-      1000: {
-        items: 3
-      }
-    }
-  });
+  // $(".js-team-carousel").owlCarousel({
+  //   autoplay: true,
+  //   loop: false,
+  //   margin: 20,
+  //   responsiveClass: true,
+  //   responsive: {
+  //     0: {
+  //       items: 1
+  //     },
+  //     768: {
+  //       items: 2
+  //     },
+  //     1000: {
+  //       items: 3
+  //     }
+  //   }
+  // });
 }); // document ready end
 
 /* Contact Form JS*/
