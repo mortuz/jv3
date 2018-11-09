@@ -45,7 +45,7 @@
 						success: function (data) {
 							console.log(data)
 							//Ajax connexion was a success, now handle response
-							if (data && !data.error) {
+							if (data) {
 								// Hide for if no error
 								settings.successClean.val("");
 								settings.successInvisible.addClass('invisible');
