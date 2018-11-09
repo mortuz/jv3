@@ -10,7 +10,7 @@
 	$.fn.initForm = function (options) {
 		var settings = $.extend({
 			type: 'post',
-			serverUrl: './ajax/contact.php',
+			serverUrl: 'http://mail.idevia.in/u/Ze4ea57a6fe8f266',
 			successClean: this.find('.form-success-clean'),
 			successGone: this.find('.form-success-gone'),
 			successInvisible: this.find('.form-success-invisible'),

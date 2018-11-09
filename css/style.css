@@ -1135,11 +1135,11 @@ a.site-button {
   }
 
   nav {
-    padding: 30px 15px;
+    /* padding: 30px 15px; */
   }
 
   .nav-menu {
-    margin-top: 40px;
+    margin-top: 60px;
     display: none;
     float: none;
     width: 100%;
@@ -1986,4 +1986,16 @@ section.work-cards article a:hover .symbol svg{
 }
 .hover-effect:hover .img-title p {
   color: #414141;
+}
+.logo img {
+  height: 80px;
+}
+
+@media (max-width: 767px) {
+  .logo img {
+    height: 50px;
+  }
+  nav {
+    padding: 10px;
+  }
 }
