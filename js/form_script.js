@@ -65,11 +65,22 @@
 						},
 						/* show error message */
 						error: function (jqXHR, textStatus, errorThrown) {
+
+							if(jqXHR.status == 200) {
+								settings.successClean.val("");
+								settings.successInvisible.addClass('invisible');
+								settings.successGone.addClass('gone');
+								settings.successVisible.removeClass('invisible');
+								settings.successVisible.removeClass('gone');
+								console.log('Request sent successfully');
+							} else {
+								settings.textFeedback.removeClass('gone');
+								settings.textFeedback.removeClass('invisible');
+								settings.textFeedback.html('Error when sending request.');
+								console.log('ajax error', jqXHR);
+							}
 							//ajax error
-							settings.textFeedback.removeClass('gone');
-							settings.textFeedback.removeClass('invisible');
-							settings.textFeedback.html('Error when sending request.');
-							console.log('ajax error', jqXHR);
+							
 
 						}
 						/* END EMAIL SENDING CALLBACK */
