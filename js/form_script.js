@@ -39,6 +39,7 @@
 						type: settings.type,
 						data: form_data,
 						dataType: 'json',
+						contentType: 'application/x-www-form-urlencoded',
 
 						/* CALLBACK FOR SENDING EMAIL GOEAS HERE */
 						success: function (data) {
