@@ -1,5 +1,27 @@
 "use strict";
+function overlayWidth() {
+  var i = 0;
+  $(".hover-effect").each(function () {
+    var width = $(this)
+      .find("img")
+      .width();
+    var height = $(this)
+      .find("img")
+      .height();
+    $(this)
+      .find(".overlay")
+      .addClass(overlayColors[i % 3])
+      .width(width)
+      .height(height);
+    i++;
+  });
+}
 $(window).load(function() {
+  // hover effect
+  setTimeout(function() {
+    $(".hover-effect").append('<div class="overlay mx-auto"></div>');
+    overlayWidth();
+  }, 1000);
   var sendEmailForm = $(".send_email_form");
   var sendMessageForm = $(".send_message_form");
 
@@ -463,32 +485,11 @@ $(document).ready(function() {
     $(this).removeClass("reqError");
   });
 
-  // hover effect
-  var overlayColors = ["red", "purple", "blue"];
-  $(".hover-effect").append('<div class="overlay mx-auto"></div>');
 
-  function overlayWidth() {
-    // console.log($(".hover-effect"));
-    var i = 0;
-    $(".hover-effect").each(function() {
-      // console.log($(this))
-      var width = $(this)
-        .find("img")
-        .width();
-      var height = $(this)
-        .find("img")
-        .height();
-      $(this)
-        .find(".overlay")
-        .addClass(overlayColors[i % 3])
-        .width(width)
-        .height(height);
-      i++;
-    });
-  }
-  setTimeout(function() {
-    overlayWidth();
-  }, 500);
+  
+  // setTimeout(function() {
+  //   overlayWidth();
+  // }, 500);
   $(window).on("resize", overlayWidth);
 
   //Detect Closest Edge
