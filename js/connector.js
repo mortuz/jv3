@@ -1,5 +1,7 @@
+var overlayColors = ["red", "purple", "blue"];
 (function($) {
   //fetch blog
+
   $.ajax({
     url: "http://jventures.pk/backend/wp-json/wp/v2/posts?_embed",
     data: { categories: 4, per_page: 3 },
@@ -24,6 +26,7 @@
                 <div class="hover-effect">
 
                     <img src="${image}">
+                    <div class="overlay mx-auto"></div>
                 </div>
             </div>
             <h2 class="blog-title">${title}</h2>
@@ -34,6 +37,7 @@
       }
 
       $(".js-blog").prepend(html);
+      overlayWidth();
     },
     error: function(err) {
       console.error("FETCH_TEAM_ERR:", err);

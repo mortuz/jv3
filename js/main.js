@@ -1,7 +1,23 @@
 "use strict";
+function overlayWidth() {
+  var i = 0;
+  $(".hover-effect").each(function () {
+    var width = $(this)
+      .find("img")
+      .width();
+    var height = $(this)
+      .find("img")
+      .height();
+    $(this)
+      .find(".overlay")
+      .addClass(overlayColors[i % 3])
+      .width(width)
+      .height(height);
+    i++;
+  });
+}
 $(window).load(function() {
   // hover effect
-  var overlayColors = ["red", "purple", "blue"];
   setTimeout(function() {
     $(".hover-effect").append('<div class="overlay mx-auto"></div>');
   }, 1000);
@@ -469,28 +485,10 @@ $(document).ready(function() {
   });
 
 
-  function overlayWidth() {
-    // console.log($(".hover-effect"));
-    var i = 0;
-    $(".hover-effect").each(function() {
-      // console.log($(this))
-      var width = $(this)
-        .find("img")
-        .width();
-      var height = $(this)
-        .find("img")
-        .height();
-      $(this)
-        .find(".overlay")
-        .addClass(overlayColors[i % 3])
-        .width(width)
-        .height(height);
-      i++;
-    });
-  }
-  setTimeout(function() {
-    overlayWidth();
-  }, 500);
+  
+  // setTimeout(function() {
+  //   overlayWidth();
+  // }, 500);
   $(window).on("resize", overlayWidth);
 
   //Detect Closest Edge
