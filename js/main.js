@@ -1,5 +1,10 @@
 "use strict";
 $(window).load(function() {
+  // hover effect
+  var overlayColors = ["red", "purple", "blue"];
+  setTimeout(function() {
+    $(".hover-effect").append('<div class="overlay mx-auto"></div>');
+  }, 1000);
   var sendEmailForm = $(".send_email_form");
   var sendMessageForm = $(".send_message_form");
 
@@ -463,9 +468,6 @@ $(document).ready(function() {
     $(this).removeClass("reqError");
   });
 
-  // hover effect
-  var overlayColors = ["red", "purple", "blue"];
-  $(".hover-effect").append('<div class="overlay mx-auto"></div>');
 
   function overlayWidth() {
     // console.log($(".hover-effect"));
