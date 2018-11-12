@@ -20,6 +20,7 @@ $(window).load(function() {
   // hover effect
   setTimeout(function() {
     $(".hover-effect").append('<div class="overlay mx-auto"></div>');
+    overlayWidth();
   }, 1000);
   var sendEmailForm = $(".send_email_form");
   var sendMessageForm = $(".send_message_form");
