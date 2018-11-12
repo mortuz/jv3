@@ -37,7 +37,22 @@ var overlayColors = ["red", "purple", "blue"];
       }
 
       $(".js-blog").prepend(html);
-      overlayWidth();
+      var i = 0;
+      $(".hover-effect").each(function () {
+        var width = $(this)
+          .find("img")
+          .width();
+        var height = $(this)
+          .find("img")
+          .height();
+        $(this)
+          .find(".overlay")
+          .addClass(overlayColors[i % 3])
+          .width(width)
+          .height(height);
+        i++;
+      });
+      // overlayWidth();
     },
     error: function(err) {
       console.error("FETCH_TEAM_ERR:", err);
