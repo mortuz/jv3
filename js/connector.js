@@ -3,7 +3,7 @@ var overlayColors = ["red", "purple", "blue"];
   //fetch blog
 
   $.ajax({
-    url: "http://jventures.pk/backend/wp-json/wp/v2/posts?_embed",
+    url: "https://jventures.pk/backend/wp-json/wp/v2/posts?_embed",
     data: { categories: 4, per_page: 3 },
     type: "get",
     success: function(data) {
